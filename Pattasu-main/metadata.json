@@ -1,0 +1,8 @@
+{
+  "name": "Crackers Shop Management System",
+  "description": "A comprehensive React + Express admin dashboard for managing products, retail/transport billing, suppliers, customer outstanding ledger, stock purchases, and analytical reports for a crackers shop.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

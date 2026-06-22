@@ -1,0 +1,385 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "name": "Admin Owner",
+      "email": "admin@gmail.com",
+      "role": "Admin",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "user-2",
+      "name": "Staff User",
+      "email": "staff@gmail.com",
+      "role": "Staff",
+      "createdAt": "2026-02-15T00:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "p-1",
+      "productName": "10,000 Wala Crackers",
+      "category": "Garland Crackers",
+      "netPrice": 200,
+      "wholesalePrice": 450,
+      "retailPrice": 600,
+      "stock": 19,
+      "discountAvailable": true,
+      "status": "active",
+      "createdAt": "2026-03-01T00:00:00.000Z"
+    },
+    {
+      "id": "p-2",
+      "productName": "5,000 Wala Crackers",
+      "category": "Garland Crackers",
+      "netPrice": 100,
+      "wholesalePrice": 220,
+      "retailPrice": 320,
+      "stock": 4,
+      "discountAvailable": true,
+      "status": "active",
+      "createdAt": "2026-03-02T00:00:00.000Z"
+    },
+    {
+      "id": "p-3",
+      "productName": "Flower Pots Jumbo",
+      "category": "Flower Pots",
+      "netPrice": 80,
+      "wholesalePrice": 140,
+      "retailPrice": 200,
+      "stock": 3,
+      "discountAvailable": true,
+      "status": "active",
+      "createdAt": "2026-03-05T00:00:00.000Z"
+    },
+    {
+      "id": "p-4",
+      "productName": "Ground Chakkars Big",
+      "category": "Ground Chakkars",
+      "netPrice": 30,
+      "wholesalePrice": 70,
+      "retailPrice": 100,
+      "stock": 40,
+      "discountAvailable": false,
+      "status": "active",
+      "createdAt": "2026-03-08T00:00:00.000Z"
+    },
+    {
+      "id": "p-5",
+      "productName": "Rockets Deluxe",
+      "category": "Rockets",
+      "netPrice": 90,
+      "wholesalePrice": 170,
+      "retailPrice": 240,
+      "stock": 2,
+      "discountAvailable": true,
+      "status": "active",
+      "createdAt": "2026-03-10T00:00:00.000Z"
+    },
+    {
+      "id": "p-6",
+      "productName": "12 Shots Multi-Color",
+      "category": "Multi-Shots",
+      "netPrice": 240,
+      "wholesalePrice": 480,
+      "retailPrice": 650,
+      "stock": 35,
+      "discountAvailable": true,
+      "status": "active",
+      "createdAt": "2026-03-12T00:00:00.000Z"
+    },
+    {
+      "id": "p-7",
+      "productName": "Red & Green Sparklers 15cm",
+      "category": "Sparklers",
+      "netPrice": 15,
+      "wholesalePrice": 35,
+      "retailPrice": 50,
+      "stock": 80,
+      "discountAvailable": false,
+      "status": "active",
+      "createdAt": "2026-03-15T00:00:00.000Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "c-1",
+      "customerName": "Suresh Kumar",
+      "mobile": "9876543210",
+      "address": "123 Main Bazaar Road",
+      "city": "Sivakasi",
+      "gstNumber": "33AAAAA1111A1Z1",
+      "customerType": "wholesale",
+      "balanceAmount": 5000,
+      "createdAt": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": "c-2",
+      "customerName": "Ramesh Exports",
+      "mobile": "9812345678",
+      "address": "45 GNT Trunk Road",
+      "city": "Chennai",
+      "gstNumber": "33BBBBB2222B2Z2",
+      "customerType": "wholesale",
+      "balanceAmount": 12500,
+      "createdAt": "2026-05-15T00:00:00.000Z"
+    },
+    {
+      "id": "c-3",
+      "customerName": "Ananth Retailer",
+      "mobile": "9443211234",
+      "address": "7 Bazaar Cross Street",
+      "city": "Madurai",
+      "gstNumber": "",
+      "customerType": "retail",
+      "balanceAmount": 1500,
+      "createdAt": "2026-06-01T00:00:00.000Z"
+    },
+    {
+      "id": "c-4",
+      "customerName": "Cash Customer",
+      "mobile": "9000000000",
+      "address": "Walk-in Store Customer",
+      "city": "Sivakasi",
+      "gstNumber": "",
+      "customerType": "retail",
+      "balanceAmount": 0,
+      "createdAt": "2026-06-10T00:00:00.000Z"
+    },
+    {
+      "id": "c-qm8yrojg2",
+      "createdAt": "2026-06-19T11:20:20.054Z",
+      "customerName": "jaya",
+      "mobile": "6369649827",
+      "address": "cdcsd",
+      "city": "madurai",
+      "gstNumber": "588",
+      "customerType": "wholesale",
+      "balanceAmount": 1000
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "s-0685bs8od",
+      "supplierName": "john",
+      "mobile": "6369649827",
+      "address": "ttl",
+      "gstNumber": ""
+    }
+  ],
+  "retailBills": [
+    {
+      "id": "b-1",
+      "billNo": "RET-1001",
+      "customer": "Ananth Retailer",
+      "items": [
+        {
+          "productId": "p-4",
+          "productName": "Ground Chakkars Big",
+          "quantity": 10,
+          "rate": 100,
+          "amount": 1000
+        }
+      ],
+      "subtotal": 1000,
+      "discount": 100,
+      "grandTotal": 900,
+      "paymentMode": "UPI",
+      "paidAmount": 900,
+      "balanceAmount": 0,
+      "billDate": "2026-06-15T00:00:00.000Z"
+    },
+    {
+      "id": "b-2",
+      "billNo": "RET-1002",
+      "customer": "Suresh Kumar",
+      "items": [
+        {
+          "productId": "p-1",
+          "productName": "10,000 Wala Crackers",
+          "quantity": 5,
+          "rate": 450,
+          "amount": 2250
+        },
+        {
+          "productId": "p-6",
+          "productName": "12 Shots Multi-Color",
+          "quantity": 2,
+          "rate": 480,
+          "amount": 960
+        }
+      ],
+      "subtotal": 3210,
+      "discount": 210,
+      "grandTotal": 3000,
+      "paymentMode": "Credit",
+      "paidAmount": 1000,
+      "balanceAmount": 2000,
+      "billDate": "2026-06-17T00:00:00.000Z"
+    },
+    {
+      "id": "b-3",
+      "billNo": "RET-1003",
+      "customer": "Cash Customer",
+      "items": [
+        {
+          "productId": "p-3",
+          "productName": "Flower Pots Jumbo",
+          "quantity": 2,
+          "rate": 200,
+          "amount": 400
+        },
+        {
+          "productId": "p-7",
+          "productName": "Red & Green Sparklers 15cm",
+          "quantity": 4,
+          "rate": 50,
+          "amount": 200
+        }
+      ],
+      "subtotal": 600,
+      "discount": 50,
+      "grandTotal": 550,
+      "paymentMode": "Cash",
+      "paidAmount": 550,
+      "balanceAmount": 0,
+      "billDate": "2026-06-18T11:51:08.686Z"
+    },
+    {
+      "id": "b-s6upceqz2",
+      "billNo": "RET-1004",
+      "billDate": "2026-06-19T10:26:32.796Z",
+      "customer": "Suresh Kumar",
+      "items": [
+        {
+          "productId": "p-2",
+          "productName": "5,000 Wala Crackers",
+          "quantity": 1,
+          "rate": 320,
+          "amount": 320
+        }
+      ],
+      "subtotal": 320,
+      "discount": 8,
+      "grandTotal": 370,
+      "paymentMode": "Cash",
+      "paidAmount": 370,
+      "balanceAmount": 0
+    },
+    {
+      "id": "b-6tc4du3be",
+      "billNo": "RET-1005",
+      "billDate": "2026-06-19T10:54:43.759Z",
+      "customer": "Suresh Kumar",
+      "items": [
+        {
+          "productId": "p-1",
+          "productName": "10,000 Wala Crackers",
+          "quantity": 3,
+          "rate": 600,
+          "amount": 1800
+        }
+      ],
+      "subtotal": 1800,
+      "discount": 5,
+      "grandTotal": 2119,
+      "paymentMode": "Cash",
+      "paidAmount": 2119,
+      "balanceAmount": 0
+    }
+  ],
+  "transportBills": [
+    {
+      "id": "t-1",
+      "transportBillNo": "TRN-5001",
+      "customer": "Ramesh Exports",
+      "transportName": "VRL Logistics Private Limited",
+      "vehicleNumber": "TN-67-AX-4321",
+      "destination": "Chennai Depot",
+      "items": [
+        {
+          "productId": "p-6",
+          "productName": "12 Shots Multi-Color",
+          "quantity": 10,
+          "rate": 480,
+          "amount": 4800
+        }
+      ],
+      "transportCharge": 450,
+      "totalAmount": 5250,
+      "dispatchDate": "2026-06-16T00:00:00.000Z",
+      "status": "Dispatched"
+    },
+    {
+      "id": "t-2",
+      "transportBillNo": "TRN-5002",
+      "customer": "Suresh Kumar",
+      "transportName": "SRS Transports",
+      "vehicleNumber": "TN-58-BY-9876",
+      "destination": "Madurai Branch",
+      "items": [
+        {
+          "productId": "p-1",
+          "productName": "10,000 Wala Crackers",
+          "quantity": 3,
+          "rate": 450,
+          "amount": 1350
+        }
+      ],
+      "transportCharge": 200,
+      "totalAmount": 1550,
+      "dispatchDate": "2026-06-18T11:51:08.686Z",
+      "status": "Pending"
+    }
+  ],
+  "purchases": [
+    {
+      "id": "pu-1",
+      "purchaseNo": "PUR-3001",
+      "supplier": "Sri Kaliswari Fireworks",
+      "products": [
+        {
+          "productId": "p-1",
+          "productName": "10,000 Wala Crackers",
+          "quantity": 20,
+          "rate": 200,
+          "amount": 4000
+        }
+      ],
+      "totalAmount": 4000,
+      "purchaseDate": "2026-06-10T00:00:00.000Z"
+    },
+    {
+      "id": "pu-2",
+      "purchaseNo": "PUR-3002",
+      "supplier": "Standard Fireworks Ltd",
+      "products": [
+        {
+          "productId": "p-3",
+          "productName": "Flower Pots Jumbo",
+          "quantity": 15,
+          "rate": 80,
+          "amount": 1200
+        }
+      ],
+      "totalAmount": 1200,
+      "purchaseDate": "2026-06-12T00:00:00.000Z"
+    },
+    {
+      "id": "pu-563drhanm",
+      "purchaseNo": "PUR-3003",
+      "purchaseDate": "2026-06-19T11:21:49.280Z",
+      "supplier": "john",
+      "products": [
+        {
+          "productId": "p-1",
+          "productName": "10,000 Wala Crackers",
+          "quantity": 10,
+          "rate": 32,
+          "amount": 320
+        }
+      ],
+      "totalAmount": 320
+    }
+  ]
+}
