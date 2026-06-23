@@ -1,3 +1,10 @@
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
+const fetch = (url, options) => {
+  const fullUrl = url.startsWith("/") ? `${BASE_URL}${url}` : url;
+  return window.fetch(fullUrl, options);
+};
+
 const getHeaders = () => {
   const token = localStorage.getItem("token");
   return {

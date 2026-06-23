@@ -23,7 +23,7 @@
       "netPrice": 200,
       "wholesalePrice": 450,
       "retailPrice": 600,
-      "stock": 19,
+      "stock": 12,
       "discountAvailable": true,
       "status": "active",
       "createdAt": "2026-03-01T00:00:00.000Z"
@@ -35,7 +35,7 @@
       "netPrice": 100,
       "wholesalePrice": 220,
       "retailPrice": 320,
-      "stock": 4,
+      "stock": 5,
       "discountAvailable": true,
       "status": "active",
       "createdAt": "2026-03-02T00:00:00.000Z"
@@ -145,26 +145,22 @@
       "customerType": "retail",
       "balanceAmount": 0,
       "createdAt": "2026-06-10T00:00:00.000Z"
-    },
-    {
-      "id": "c-qm8yrojg2",
-      "createdAt": "2026-06-19T11:20:20.054Z",
-      "customerName": "jaya",
-      "mobile": "6369649827",
-      "address": "cdcsd",
-      "city": "madurai",
-      "gstNumber": "588",
-      "customerType": "wholesale",
-      "balanceAmount": 1000
     }
   ],
   "suppliers": [
     {
-      "id": "s-0685bs8od",
-      "supplierName": "john",
-      "mobile": "6369649827",
-      "address": "ttl",
-      "gstNumber": ""
+      "id": "s-1",
+      "supplierName": "Sri Kaliswari Fireworks",
+      "mobile": "9500112233",
+      "address": "Kaliswari Factory Road",
+      "gstNumber": "33KALI1234K1Z2"
+    },
+    {
+      "id": "s-2",
+      "supplierName": "Standard Fireworks Ltd",
+      "mobile": "9500223344",
+      "address": "Standard Factory Complex",
+      "gstNumber": "33STND5678S3Z4"
     }
   ],
   "retailBills": [
@@ -243,49 +239,7 @@
       "paymentMode": "Cash",
       "paidAmount": 550,
       "balanceAmount": 0,
-      "billDate": "2026-06-18T11:51:08.686Z"
-    },
-    {
-      "id": "b-s6upceqz2",
-      "billNo": "RET-1004",
-      "billDate": "2026-06-19T10:26:32.796Z",
-      "customer": "Suresh Kumar",
-      "items": [
-        {
-          "productId": "p-2",
-          "productName": "5,000 Wala Crackers",
-          "quantity": 1,
-          "rate": 320,
-          "amount": 320
-        }
-      ],
-      "subtotal": 320,
-      "discount": 8,
-      "grandTotal": 370,
-      "paymentMode": "Cash",
-      "paidAmount": 370,
-      "balanceAmount": 0
-    },
-    {
-      "id": "b-6tc4du3be",
-      "billNo": "RET-1005",
-      "billDate": "2026-06-19T10:54:43.759Z",
-      "customer": "Suresh Kumar",
-      "items": [
-        {
-          "productId": "p-1",
-          "productName": "10,000 Wala Crackers",
-          "quantity": 3,
-          "rate": 600,
-          "amount": 1800
-        }
-      ],
-      "subtotal": 1800,
-      "discount": 5,
-      "grandTotal": 2119,
-      "paymentMode": "Cash",
-      "paidAmount": 2119,
-      "balanceAmount": 0
+      "billDate": "2026-06-23T09:47:07.751Z"
     }
   ],
   "transportBills": [
@@ -328,7 +282,7 @@
       ],
       "transportCharge": 200,
       "totalAmount": 1550,
-      "dispatchDate": "2026-06-18T11:51:08.686Z",
+      "dispatchDate": "2026-06-23T09:47:07.751Z",
       "status": "Pending"
     }
   ],
@@ -364,22 +318,6 @@
       ],
       "totalAmount": 1200,
       "purchaseDate": "2026-06-12T00:00:00.000Z"
-    },
-    {
-      "id": "pu-563drhanm",
-      "purchaseNo": "PUR-3003",
-      "purchaseDate": "2026-06-19T11:21:49.280Z",
-      "supplier": "john",
-      "products": [
-        {
-          "productId": "p-1",
-          "productName": "10,000 Wala Crackers",
-          "quantity": 10,
-          "rate": 32,
-          "amount": 320
-        }
-      ],
-      "totalAmount": 320
     }
   ]
 }

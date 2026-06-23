@@ -2,10 +2,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from "express";
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from 'url';
-import { createServer as createViteServer } from "vite";
 import jwt from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
+import cors from "cors";
 import * as fileDB from "./db.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -24,6 +25,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "crackers-shop-super-secret-key";
 
 // Database layer will be prepared before server start (file-based by default)
 
+app.use(cors());
 app.use(express.json());
 
 // Logger / Debug Middleware
@@ -469,6 +471,7 @@ app.get("/api/reports", authenticateToken, async (req, res) => {
 // ==========================================
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       root: path.join(__dirname, ".."),
       configFile: path.join(__dirname, "..", "vite.config.js"),
@@ -478,10 +481,16 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(__dirname, "..", "dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
-    });
+    if (fs.existsSync(distPath)) {
+      app.use(express.static(distPath));
+      app.get("*", (req, res) => {
+        res.sendFile(path.join(distPath, "index.html"));
+      });
+    } else {
+      app.get("*", (req, res) => {
+        res.json({ message: "Pattasu Backend API is running..." });
+      });
+    }
   }
 
   app.listen(PORT, "0.0.0.0", () => {
@@ -524,4 +533,8 @@ async function main() {
   await startServer();
 }
 
-main();
+if (process.env.NODE_ENV !== "test") {
+  main();
+}
+
+export { app, collections, prepareDataLayer };
