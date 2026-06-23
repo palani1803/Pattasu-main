@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import bcryptjs from 'bcryptjs';
 
-const DATA_DIR = path.join(process.cwd(), 'server', 'data');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 
 // Memory Cache

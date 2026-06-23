@@ -95,9 +95,7 @@ const TransportBill = mongoose.models.TransportBill || mongoose.model('Transport
 const Purchase = mongoose.models.Purchase || mongoose.model('Purchase', PurchaseSchema);
 
 export async function connectMongo(uri, options = {}) {
-  await mongoose.connect(uri, { 
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  await mongoose.connect(uri, {
     ...options
   });
 }

@@ -2,10 +2,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 import express from "express";
 import path from "path";
+import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from "vite";
 import jwt from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
-import * as fileDB from "./server/db.js";
+import * as fileDB from "./db.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // start with file-based DB as default; may be replaced at runtime with MongoDB layer
 let collections = fileDB.collections;
@@ -16,7 +19,7 @@ let saveDB = fileDB.saveDB;
 
 // Setup Server
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || "crackers-shop-super-secret-key";
 
 // Database layer will be prepared before server start (file-based by default)
@@ -467,12 +470,14 @@ app.get("/api/reports", authenticateToken, async (req, res) => {
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
+      root: path.join(__dirname, ".."),
+      configFile: path.join(__dirname, "..", "vite.config.js"),
       server: { middlewareMode: true },
       appType: "spa",
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), "dist");
+    const distPath = path.join(__dirname, "..", "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
@@ -490,11 +495,11 @@ async function startServer() {
 async function prepareDataLayer() {
   try {
     if (process.env.MONGO_URI) {
-      const mongo = await import('./server/mongo.js');
+      const mongo = await import('./mongo.js');
       await mongo.connectMongo(process.env.MONGO_URI);
       // Optional migration from JSON if MIGRATE_JSON=1
       if (process.env.MIGRATE_JSON === '1') {
-        await mongo.migrateFromFile(path.join(process.cwd(), 'server', 'data', 'db.json'));
+        await mongo.migrateFromFile(path.join(__dirname, 'data', 'db.json'));
       }
       collections = mongo.collections;
       verifyUserPassword = mongo.verifyUserPassword || verifyUserPassword;
