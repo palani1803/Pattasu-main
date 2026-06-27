@@ -26,7 +26,7 @@ describe('API Client Service Suite', () => {
 
     expect(fetchSpy).toHaveBeenCalledTimes(1);
     const [calledUrl, calledOptions] = fetchSpy.mock.calls[0];
-    
+
     // Check url (should end with the endpoint)
     expect(calledUrl).toContain('/api/auth/login');
     expect(calledOptions.method).toBe('POST');
